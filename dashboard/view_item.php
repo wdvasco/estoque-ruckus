@@ -231,16 +231,21 @@ $item = $result['item'];
                                 <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Localização e Observações</h5>
                             </div>
                             <div class="card-body">
+                                <!-- DEBUG: Exibir valores reais de location e obs em linhas separadas -->
+                                <div style="background:#fffbe6;color:#b94a48;padding:10px;border:1px solid #fbeed5;">
+                                    Location: <?= var_export($item['location'], true) ?><br>
+                                    Obs: <?= var_export($item['obs'], true) ?>
+                                </div>
                                 <div class="mb-4">
                                     <div class="info-label">Localização</div>
                                     <div class="info-value">
-                                        <?= !empty($item['location']) ? htmlspecialchars($item['location']) : '<em class="text-muted">Localização não informada</em>' ?>
+                                        <?= isset($item['location']) && trim($item['location']) !== '' ? htmlspecialchars($item['location']) : '<em class="text-muted">Localização não informada</em>' ?>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="info-label">Observações</div>
                                     <div class="info-value">
-                                        <?= !empty($item['obs']) ? htmlspecialchars($item['obs']) : '<em class="text-muted">Nenhuma observação</em>' ?>
+                                        <?= isset($item['obs']) && trim($item['obs']) !== '' ? htmlspecialchars($item['obs']) : '<em class="text-muted">Nenhuma observação</em>' ?>
                                     </div>
                                 </div>
                             </div>
@@ -262,33 +267,6 @@ $item = $result['item'];
                                     <small class="text-muted">
                                         MAC: <?= !empty($item['apmac']) ? htmlspecialchars($item['apmac']) : 'N/A' ?>
                                     </small>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Technical Information -->
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <h5 class="mb-0"><i class="fas fa-cogs"></i> Informações Técnicas</h5>
-                            </div>
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <div class="info-label">ID do Sistema</div>
-                                    <div class="info-value">#<?= $item['id'] ?></div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <div class="info-label">Data de Criação</div>
-                                    <div class="info-value">
-                                        <?= !empty($item['created_at']) ? date('d/m/Y H:i', strtotime($item['created_at'])) : 'N/A' ?>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <div class="info-label">Última Atualização</div>
-                                    <div class="info-value">
-                                        <?= !empty($item['updated_at']) ? date('d/m/Y H:i', strtotime($item['updated_at'])) : 'N/A' ?>
-                                    </div>
                                 </div>
                             </div>
                         </div>
