@@ -1,0 +1,8 @@
+   /config/database.php
+   /config/sheet_cache.json
+   *.log
+   *.tmp
+   *.bak
+   /vendor/
+   node_modules/
+   .env
