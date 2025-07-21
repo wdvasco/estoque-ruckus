@@ -6,3 +6,8 @@
    /vendor/
    node_modules/
    .env
+     *.sql
+  *.db
+  *.sqlite
+  *.ibd
+  *.frm
