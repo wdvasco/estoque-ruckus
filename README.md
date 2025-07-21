@@ -193,3 +193,9 @@ Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes
 ---
 
 **Desenvolvido com ❤️ para gerenciamento eficiente de Access Points Ruckus**
+
+
+## Como criar o banco de dados
+
+1. Importe o arquivo `estrutura_banco.sql` no seu MySQL/phpMyAdmin.
+2. Configure o acesso ao banco em `config/database.php`.
